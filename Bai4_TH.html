@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Employee Form</title>
+</head>
+<body>
+
+  <table border="1" cellpadding="10" cellspacing="0" width="600" align="center">
+    <tr>
+      <td>
+
+        <!-- BASIC INFO -->
+        <h3>Basic Info</h3>
+        <hr>
+
+        <table border="0" cellpadding="8" cellspacing="0" width="100%">
+          <tr>
+            <td><label for="emp_id">Employee ID</label></td>
+            <td>9</td>
+          </tr>
+
+          <tr>
+            <td><label for="last_name">Last Name</label></td>
+            <td>Dodsworth</td>
+          </tr>
+
+          <tr>
+            <td><label for="first_name">First Name</label></td>
+            <td>
+              <select id="first_name" name="first_name" style="width: 365px;">
+                <option>Anne</option>
+                <option>Andrew</option>
+                <option>Janet</option>
+                <option>Steven</option>
+                <option>Margaret</option>
+              </select>
+            </td>
+          </tr>
+
+          <tr>
+            <td><label>Gender</label></td>
+            <td>
+              <input type="radio" id="male" name="gender" value="Male">
+              <label for="male">Male</label><br>
+
+              <input type="radio" id="female" name="gender" value="Female">
+              <label for="female">Female</label><br>
+
+              <input type="radio" id="xxx" name="gender" value="XXX">
+              <label for="xxx">XXX</label><br>
+
+              <input type="radio" id="zzz" name="gender" value="ZZZ" checked>
+              <label for="zzz">ZZZ</label>
+            </td>
+          </tr>
+
+          <tr>
+            <td><label for="job_title">Title</label></td>
+            <td>
+              <input type="text" id="job_title" name="job_title" value="Sales Representative" size="50">
+            </td>
+          </tr>
+
+          <tr>
+            <td><label for="suffix">Suffix</label></td>
+            <td>
+              <input type="text" id="suffix" name="suffix" value="Ms." size="50">
+            </td>
+          </tr>
+
+          <tr>
+            <td><label for="birth_date">BirthDate</label></td>
+            <td>
+              <input type="text" id="birth_date" name="birth_date" value="1969-07-02 00:00:00" size="50">
+            </td>
+          </tr>
+
+          <tr>
+            <td><label for="hire_date">HireDate</label></td>
+            <td>
+              <input type="text" id="hire_date" name="hire_date" value="1994-11-15 00:00:00" size="50">
+            </td>
+          </tr>
+
+          <tr>
+            <td><label for="ssn">SSN # (if applicable)</label></td>
+            <td>
+              <input type="text" id="ssn" name="ssn" size="50">
+            </td>
+          </tr>
+
+          <tr>
+            <td><label for="reports_to">Reports To</label></td>
+            <td>
+              <select id="reports_to" name="reports_to">
+                <option>Buchanan</option>
+                <option>Fuller</option>
+                <option>King</option>
+              </select>
+            </td>
+          </tr>
+        </table>
+
+        <!-- CONTACT INFO -->
+        <h3>Contact Info</h3>
+        <hr>
+
+        <table border="0" cellpadding="8" cellspacing="0" width="100%">
+          <tr>
+            <td><label for="email">Email</label></td>
+            <td>
+              <input type="text" id="email" name="email" value="name@example.com" size="50">
+            </td>
+          </tr>
+
+          <tr>
+            <td><label for="address">Address</label></td>
+            <td>
+              <input type="text" id="address" name="address" value="7 Houndstooth Rd." size="50">
+            </td>
+          </tr>
+
+          <tr>
+            <td><label for="city">City</label></td>
+            <td>
+              <input type="text" id="city" name="city" value="London" size="50">
+            </td>
+          </tr>
+
+          <tr>
+            <td><label for="region">Region</label></td>
+            <td>
+              <input type="text" id="region" name="region" size="50">
+            </td>
+          </tr>
+
+          <tr>
+            <td><label for="postal_code">Postal Code</label></td>
+            <td>
+              <input type="text" id="postal_code" name="postal_code" value="WG2 7LT" size="50">
+            </td>
+          </tr>
+
+          <tr>
+            <td><label for="country">Country</label></td>
+            <td>
+              <select id="country" name="country">
+                <option>Russian Federation</option>
+                <option>ABC</option>
+                <option>King</option>
+              </select>
+            </td>
+          </tr>
+
+          <tr>
+            <td><label for="home_phone">US Home Phone</label></td>
+            <td>
+              <input type="text" id="home_phone" name="home_phone" value="(234)234-2342" size="50">
+            </td>
+          </tr>
+
+          <tr>
+            <td><label for="photo">Photo</label></td>
+            <td>
+              <input type="text" id="photo" name="photo" value="EmpID9.bmp" size="50">
+            </td>
+          </tr>
+        </table>
+
+        <!-- OPTIONAL INFO -->
+        <h3>Optional Info</h3>
+        <hr>
+
+        <table border="0" cellpadding="8" cellspacing="0" width="100%">
+          <!-- Notes -->
+          <tr>
+            <td valign="top"><label for="notes">Notes</label></td>
+            <td>
+              <table border="1" cellpadding="4" cellspacing="0">
+                <tr>
+                  <tr>
+                    <td>
+                      <b>B</b> <i>I</i> <u>U</u> <s>S</s>
+                      |
+                      <span style="text-decoration:underline dotted;">X<sub>2</sub></span>
+                      <span style="text-decoration:underline dotted;">X<sup>2</sup></span>
+                      &nbsp; |
+                      <span title="Insert Link">↪</span>
+                      <span title="Remove Link">↩</span>
+                      &nbsp; |
+                      <span title="Bullet List">• List</span>
+                      <span title="Numbered List">1. List</span>
+                      &nbsp; |
+                      <span title="Insert Table">📋</span>
+                      <span title="Insert Image">🖼️</span>
+                      &nbsp; |
+                      H1 H2 H3
+                      &nbsp; |
+                      <span style="color:red;">X</span>
+                    </td>
+                  </tr>
+
+                </tr>
+                  <td>
+                    <textarea id="notes" name="notes" rows="4" cols="60">
+Anne has a BA degree in English from St. Lawrence College.
+She is fluent in French and German.ZZZ
+                    </textarea>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <tr>
+            <td valign="top">Preferred Shift</td>
+            <td>
+              <input type="checkbox" id="regular" name="shift" value="Regular">
+              <label for="regular">Regular</label><br>
+
+              <input type="checkbox" id="graveyard" name="shift" value="Graveyard" checked>
+              <label for="graveyard">Gravy Yard</label>
+            </td>
+          </tr>
+
+          <tr>
+            <td><label for="active">Active?</label></td>
+            <td>
+              <input type="checkbox" id="active" name="active" checked>
+            </td>
+          </tr>
+
+          <tr>
+            <td><label for="captcha">Are you human?</label></td>
+            <td>
+              <h2 style="font-family:monospace; letter-spacing:5px;">TIDAWO</h2>
+              <div>Click to change</div>
+              <input type="text" id="captcha" name="captcha" size="50">
+            </td>
+          </tr>
+
+          <!-- Buttons -->
+          <tr>
+            <td colspan="2" align="right">
+              <button type="submit">O Submit</button>
+              <button type="reset">X Cancel</button>
+            </td>
+          </tr>
+        </table>
+
+      </td>
+    </tr>
+  </table>
+
+</body>
+</html>
