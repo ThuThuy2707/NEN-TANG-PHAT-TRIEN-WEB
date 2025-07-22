@@ -1,0 +1,49 @@
+header {
+  background-color: #c9a7f5 !important; 
+}
+
+.bg-purple {
+  background-color: #6f42c1 !important; 
+}
+
+
+/* Tiêu đề */
+.text-primary {
+  color: #a678e2 !important;
+}
+
+/* Nút "Thêm sinh viên" */
+.btn-primary {
+  background-color: #c9a7f5;
+  border-color: #c9a7f5;
+  color: white;
+  transition: 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #b88af2;
+  border-color: #b88af2;
+  color: white;
+}
+
+.text-purple {
+  color: #6f42c1;
+  text-decoration: underline;
+}
+
+.text-purple:hover {
+  text-decoration: underline; 
+}
+
+
+/* Hover dòng bảng */
+.hover-row:hover {
+  background-color: #f3e8ff;
+}
+
+/* Responsive fallback (giữ nguyên layout đẹp trên mobile) */
+@media (max-width: 768px) {
+  .row.g-4 {
+    flex-direction: column;
+  }
+}
