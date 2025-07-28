@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quản lý Sinh viên</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h2>Quản lý Sinh viên</h2>
+
+    <!-- Thông báo -->
+    <p id="thongBao" class="message"></p>
+
+    <!-- Form nhập liệu -->
+    <form id="sinhvienForm">
+      <input type="text" id="maSV" placeholder="Mã sinh viên" required />
+      <input type="text" id="hoTen" placeholder="Họ và tên" required />
+      <input type="email" id="email" placeholder="Email" required />
+      <input type="date" id="ngaySinh" placeholder="Ngày sinh" />
+      
+      <div>
+        <label>Giới tính:</label>
+        <label><input type="radio" name="gioiTinh" value="Nam" checked /> Nam</label>
+        <label><input type="radio" name="gioiTinh" value="Nữ" /> Nữ</label>
+      </div>
+
+      <textarea id="ghiChu" placeholder="Ghi chú (tùy chọn)"></textarea>
+      
+      <button type="button" id="btnThem">Thêm sinh viên</button>
+    </form>
+
+    <!-- Bảng danh sách sinh viên -->
+    <table id="bangSinhVien">
+      <thead>
+        <tr>
+          <th>Mã SV</th>
+          <th>Họ Tên</th>
+          <th>Email</th>
+          <th>Ngày sinh</th>
+          <th>Giới tính</th>
+          <th>Ghi chú</th>
+          <th>Hành động</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Sinh viên mẫu (nếu cần thêm tay) -->
+        <tr>
+          <td>SV001</td>
+          <td>Nguyễn Văn A</td>
+          <td>a@gmail.com</td>
+          <td>2001-01-01</td>
+          <td>Nam</td>
+          <td>Chăm học</td>
+          <td>
+            <button onclick="suaDong(this)">Sửa</button> 
+            <button onclick="xoaDong(this)">Xóa</button>
+          </td>
+        </tr>
+        <tr>
+          <td>SV002</td>
+          <td>Trần Thị B</td>
+          <td>b@yahoo.com</td>
+          <td>2002-05-12</td>
+          <td>Nữ</td>
+          <td>Hoạt bát</td>
+          <td>
+            <button onclick="suaDong(this)">Sửa</button> 
+            <button onclick="xoaDong(this)">Xóa</button>
+          </td>
+        </tr>
+        <tr>
+          <td>SV003</td>
+          <td>Lê Văn C</td>
+          <td>c@hotmail.com</td>
+          <td>2000-09-20</td>
+          <td>Nam</td>
+          <td>Chăm chỉ</td>
+          <td>
+            <button onclick="suaDong(this)">Sửa</button> 
+            <button onclick="xoaDong(this)">Xóa</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
