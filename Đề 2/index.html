@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quản lý giao dịch - Trường Đại học Thủy lợi</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    body {
+      background: #f5f5f5;
+      font-family: 'Varela Round', sans-serif;
+      font-size: 13px;
+      color: #333;
+    }
+
+    .top-nav {
+      background-color: #222;
+      color: white;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .top-nav .left {
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    .top-nav .right {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .top-nav input[type="text"] {
+      padding: 4px 8px;
+      border: none;
+      border-radius: 4px;
+    }
+
+    .top-nav .btn-search {
+      background: #4CAF50;
+      color: white;
+      padding: 5px 10px;
+      border: none;
+      border-radius: 4px;
+    }
+
+    .table-wrapper {
+      background: #fff;
+      padding: 20px 25px;
+      margin: 30px auto;
+      box-shadow: 0 1px 1px rgba(0,0,0,.05);
+      border-radius: 3px;
+      max-width: 1200px;
+    }
+
+    .table-title h2 {
+      margin: 0;
+      font-size: 22px;
+    }
+
+    table.table th, table.table td {
+      vertical-align: middle !important;
+    }
+
+    table.table td i {
+      font-size: 18px;
+      margin: 0 5px;
+      cursor: pointer;
+    }
+
+    .text-danger { color: #e74c3c; }
+    .text-info { color: #3498db; }
+    .text-warning { color: #f39c12; }
+
+    footer.bg-primary {
+        background-color: #001f60 !important;
+        color: white;
+        padding: 15px 0;
+        text-align: center;
+        font-size: 14px;
+    }
+
+
+    .footer a {
+      color: #a8d1ff;
+      text-decoration: underline;
+    }
+
+    .table-footer {
+      padding-top: 10px;
+    }
+
+    .input-group .input-group-text i,
+    .input-group .btn i {
+        font-size: 16px;
+        line-height: 1;
+    }
+
+    .input-group .input-group-text,
+    .input-group .btn {
+        padding: 4px 8px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="top-nav">
+    <div class="left">Trường Đại học Thủy lợi</div>
+    <div class="right">
+      <a href="#" style="color: white;">Trang chủ</a>
+      <a href="#" style="color: grey;">Quản lý cửa hàng</a>
+      <input type="text" placeholder="Nhập nội dung tìm kiếm">
+      <button class="btn-search">TÌM KIẾM</button>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <div class="d-flex justify-content-between align-items-center flex-wrap my-3">
+      
+    <div class="d-flex justify-content-between mb-2">
+        <button class="btn btn-success btn-sm" data-toggle="modal" data-target="#addEmployeeModal">
+            <i class="material-icons">&#xE147;</i> <span>Thêm</span></button>
+        <button class="btn btn-info btn-sm">
+            <i class="material-icons">&#xE24D;</i> <span>Xuất file</span></button>
+    </div>
+
+      <div class="input-group mb-2 mb-md-0" style="max-width: 300px;">
+        <div class="input-group-prepend">
+          <span class="input-group-text"><i class="material-icons">chevron_right</i></span>
+        </div>
+        <input type="text" class="form-control" placeholder="Tìm kiếm giao dịch">
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary" type="button">
+            <i class="material-icons">search</i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Right: Select -->
+      <div class="d-flex align-items-center">
+        <label class="mb-0 mr-2" style="font-size: 13px;">kết<br>quả</label>
+        <select class="form-control form-control-sm" style="width: 60px;">
+          <option>5</option>
+          <option>10</option>
+          <option>15</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Table -->
+    <div class="table-wrapper">
+      <div class="table-responsive">
+        <table class="table table-striped table-hover">
+          <thead>
+            <tr>
+              <th>X</th>
+              <th>Hành động</th>
+              <th>ID</th>
+              <th>Khách hàng</th>
+              <th>Nhân viên</th>
+              <th>Số tiền</th>
+              <th>Ngày mua</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Sample Rows -->
+            <tr>
+              <td><input type="checkbox"></td>
+              <td>
+                <i class="material-icons text-danger">close</i>
+                <i class="material-icons text-info">visibility</i>
+                <i class="material-icons text-warning">edit</i>
+              </td>
+              <td>1102</td>
+              <td>Võ Hoài An</td>
+              <td>Mai Thục Anh</td>
+              <td>250 000</td>
+              <td>06 Tháng 6 2024 9:00</td>
+            </tr>
+            <tr>
+              <td><input type="checkbox"></td>
+              <td>
+                <i class="material-icons text-danger">close</i>
+                <i class="material-icons text-info">visibility</i>
+                <i class="material-icons text-warning">edit</i>
+              </td>
+              <td>1199</td>
+              <td>Hoàng Thị Thắng</td>
+              <td>Nguyễn Văn Hồng</td>
+              <td>600 000</td>
+              <td>06 Tháng 6 2024 9:03</td>
+            </tr>
+            <tr>
+              <td><input type="checkbox"></td>
+              <td>
+                <i class="material-icons text-danger">close</i>
+                <i class="material-icons text-info">visibility</i>
+                <i class="material-icons text-warning">edit</i>
+              </td>
+              <td>1239</td>
+              <td>Nguyễn Huy Quang</td>
+              <td>Nguyễn Văn Hồng</td>
+              <td>934 000</td>
+              <td>06 Tháng 6 2024 9:10</td>
+            </tr>
+            <tr>
+              <td><input type="checkbox"></td>
+              <td>
+                <i class="material-icons text-danger">close</i>
+                <i class="material-icons text-info">visibility</i>
+                <i class="material-icons text-warning">edit</i>
+              </td>
+              <td>1677</td>
+              <td>Huỳnh Văn Nam</td>
+              <td>Mai Thục Anh</td>
+              <td>150 000</td>
+              <td>06 Tháng 6 2024 9:20</td>
+            </tr>
+            <tr>
+              <td><input type="checkbox"></td>
+              <td>
+                <i class="material-icons text-danger">close</i>
+                <i class="material-icons text-info">visibility</i>
+                <i class="material-icons text-warning">edit</i>
+              </td>
+              <td>1439</td>
+              <td>Nguyễn Hồng Minh</td>
+              <td>Mai Thục Anh</td>
+              <td>354 000</td>
+              <td>06 Tháng 6 2024 9:24</td>
+            </tr>
+            <!-- Delete Row -->
+            <tr>
+              <td colspan="7" class="text-left">
+                <button class="btn btn-danger btn-sm">
+                  <i class="material-icons">close</i> DELETE SELECTED RECORDS
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      
+      <div class="d-flex justify-content-between align-items-center table-footer">
+        <div>
+          <ul class="pagination mb-0">
+            <li class="page-item disabled"><a href="#" class="page-link">Trang</a></li>
+            <li class="page-item active"><a href="#" class="page-link">1</a></li>
+            <li class="page-item"><a href="#" class="page-link">2</a></li>
+            <li class="page-item"><a href="#" class="page-link">3</a></li>
+            <li class="page-item"><a href="#" class="page-link">4</a></li>
+            <li class="page-item"><a href="#" class="page-link">5</a></li>
+            <li class="page-item"><a href="#" class="page-link">&gt; &gt;&gt;</a></li>
+          </ul>
+        </div>
+        <div class="hint-text text-right">
+          Kết quả <b>1</b> trong <b>20</b> trang
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-primary text-white py-3 mt-5">
+    <div class="container text-left pr-4">
+        <strong>TRƯỜNG ĐẠI HỌC THỦY LỢI</strong><br>
+        Địa chỉ: 175 Tây Sơn, Đống Đa, Hà Nội<br>
+        Điện thoại: (024) 38522201 - Fax: (024) 35633351<br>
+        Email: phonghcth@tlu.edu.vn
+    </div>
+  </footer>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<div id="addEmployeeModal" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <form>
+        <div class="modal-header">
+          <h4 class="modal-title">Thêm giao dịch</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <label>Khách hàng</label>
+            <input type="text" class="form-control" required>
+          </div>
+          <div class="form-group">
+            <label>Nhân viên</label>
+            <input type="text" class="form-control" required>
+          </div>
+          <div class="form-group">
+            <label>Số tiền</label>
+            <input type="number" class="form-control" required>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <input type="button" class="btn btn-default" data-dismiss="modal" value="Hủy">
+          <input type="submit" class="btn btn-success" value="Thêm">
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<script src="data.js"></script>
+<script>
+  document.querySelector('#addEmployeeModal form').addEventListener('submit', function (e) {
+  e.preventDefault(); 
+
+  const inputs = this.querySelectorAll('input.form-control');
+  const [khachHangInput, nhanVienInput, soTienInput] = inputs;
+
+  const khachHang = khachHangInput.value.trim();
+  const nhanVien = nhanVienInput.value.trim();
+  const soTien = soTienInput.value.trim();
+
+  // Xóa thông báo lỗi cũ
+  this.querySelectorAll('.text-danger').forEach(el => el.remove());
+
+  let isValid = true;
+
+  if (!khachHang) {
+    isValid = false;
+    showError(khachHangInput, "Vui lòng nhập tên khách hàng.");
+  } else if (khachHang.length > 30) {
+    isValid = false;
+    showError(khachHangInput, "Tên khách hàng không được vượt quá 30 ký tự.");
+  }
+
+  if (!nhanVien) {
+    isValid = false;
+    showError(nhanVienInput, "Vui lòng nhập tên nhân viên.");
+  } else if (nhanVien.length > 30) {
+    isValid = false;
+    showError(nhanVienInput, "Tên nhân viên không được vượt quá 30 ký tự.");
+  }
+
+  if (!soTien || isNaN(soTien) || Number(soTien) <= 0) {
+    isValid = false;
+    showError(soTienInput, "Vui lòng nhập số tiền hợp lệ lớn hơn 0.");
+  }
+
+  if (isValid) {
+    alert("Thêm giao dịch thành công (giả lập).");
+    $('#addEmployeeModal').modal('hide');
+    this.reset();
+  }
+});
+
+function showError(inputElement, message) {
+  const error = document.createElement('div');
+  error.className = 'text-danger mt-1';
+  error.innerText = message;
+  inputElement.parentNode.appendChild(error);
+}
+
+</script>
+
+</body>
+</html>
