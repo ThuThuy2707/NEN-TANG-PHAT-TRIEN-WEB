@@ -526,6 +526,75 @@ document.querySelector('#addEmployeeModal form').addEventListener('submit', func
   alert("Thêm nhân viên thành công!");
 });
 </script>
+<!-- Sử dụng Jquery -->
+<!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function () {
+  $('#addEmployeeModal form').on('submit', function (e) {
+    e.preventDefault();
 
+    const form = $(this);
+    const nameInput = form.find('input[type="text"]').eq(0);
+    const emailInput = form.find('input[type="email"]');
+    const addressInput = form.find('textarea');
+    const phoneInput = form.find('input[type="text"]').eq(1);
+
+    const name = nameInput.val().trim();
+    const email = emailInput.val().trim();
+    const address = addressInput.val().trim();
+    const phone = phoneInput.val().trim();
+
+    // Xóa các lỗi cũ
+    form.find('.text-danger').remove();
+
+    let isValid = true;
+
+    if (!name) {
+      isValid = false;
+      showError(nameInput, "Vui lòng nhập tên.");
+    }
+
+    if (!email) {
+      isValid = false;
+      showError(emailInput, "Vui lòng nhập email.");
+    } else if (!validateEmail(email)) {
+      isValid = false;
+      showError(emailInput, "Email không hợp lệ.");
+    }
+
+    if (!address) {
+      isValid = false;
+      showError(addressInput, "Vui lòng nhập địa chỉ.");
+    }
+
+    const phonePattern = /^0\d{9}$/;
+    if (!phone) {
+      isValid = false;
+      showError(phoneInput, "Vui lòng nhập số điện thoại.");
+    } else if (!phonePattern.test(phone)) {
+      isValid = false;
+      showError(phoneInput, "Số điện thoại phải bắt đầu bằng 0 và có đúng 10 chữ số.");
+    }
+
+    if (isValid) {
+      alert("Thêm nhân viên thành công!");
+      form[0].reset();
+      $('#addEmployeeModal').modal('hide');
+    }
+  });
+
+  function showError($input, message) {
+    const $error = $('<div class="text-danger mt-1 small"></div>').text(message);
+    $input.after($error);
+  }
+
+  function validateEmail(email) {
+    const pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return pattern.test(email);
+  }
+});
+</script>
+ -->
 </body>
+
 </html>
